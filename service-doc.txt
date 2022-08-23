@@ -1,0 +1,13 @@
+
+
+"PostCreated": (post service => query service)
+    data:{id,title}
+
+"CommentCreated": (comment service => moderation service,query service)
+    data:{id:commentId,content,postId,status:"pending"}
+
+"CommentModerated": (moderation service => comment service)
+    data:{id:commentId,content,postId,status:"approved"|"rejected"}
+
+"CommentUpdated": (comment service => query service)
+    data:{id:commentId,content,postId,status:"approved"|"rejected"}
